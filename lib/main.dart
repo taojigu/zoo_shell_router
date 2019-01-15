@@ -1,6 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:tiger_flutter_package/tiger_home_page.dart';
+import 'dart:ui';
 
-void main() => runApp(MyApp());
+void main() => runApp(_widgetForRoute(window.defaultRouteName));
+
+Widget _widgetForRoute(String route) {
+
+  switch(route) {
+    case 'tiger':return MaterialApp(
+      title: "tiger app",
+      theme: ThemeData.dark(),
+      home:TigerHomePage(title: "Tiger Home Page")
+    );
+    case 'lion':return MaterialApp(
+      title: "lion title",
+      theme: ThemeData.light(),
+      home: TigerHomePage(title: "Lanist always pay",)
+    );
+  }
+  return MyApp();
+}
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
