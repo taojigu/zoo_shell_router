@@ -15,7 +15,7 @@ Widget _widgetForRoute(String route) {
     case 'lion':return MaterialApp(
       title: "lion title",
       theme: ThemeData.light(),
-      home: TigerHomePage(title: "Lanist always pay",)
+      home: TigerHomePage(title: "Lannister always pays",)
     );
   }
   return MyApp();
