@@ -5,7 +5,7 @@ import 'dart:ui';
 void main() => runApp(_widgetForRoute(window.defaultRouteName));
 
 Widget _widgetForRoute(String route) {
-
+ print("window default route name is $route");
   switch(route) {
     case 'tiger':return MaterialApp(
       title: "tiger app",
