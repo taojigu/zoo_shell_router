@@ -23,7 +23,7 @@
 - (IBAction)pushFlutterViewController:(id)sender {
 
     FlutterViewController *flvc = [[FlutterViewController alloc] init];
-    [flvc setInitialRoute:@"tiger"];
+    [flvc setInitialRoute:@"lion"];
     [self.navigationController pushViewController:flvc animated:YES];
 }
 

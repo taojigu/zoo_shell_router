@@ -37,6 +37,8 @@ target 'Runner' do
   # referring to absolute paths on developers' machines.
   system('rm -rf .symlinks')
   system('mkdir -p .symlinks/plugins')
+  
+  pod 'Flutter', :git => 'https://github.com/taojigu/FlutterFramework',:branch=>'master'
 
   # Flutter Pods
   generated_xcode_build_settings = parse_KV_file('./Flutter/Generated.xcconfig')
@@ -47,9 +49,10 @@ target 'Runner' do
     if p[:name] == 'FLUTTER_FRAMEWORK_DIR'
       symlink = File.join('.symlinks', 'flutter')
       File.symlink(File.dirname(p[:path]), symlink)
-      pod 'Flutter', :path => File.join(symlink, File.basename(p[:path]))
+      #pod 'Flutter', :path => File.join(symlink, File.basename(p[:path]))
     end
   }
+  
 
   # Plugin Pods
   plugin_pods = parse_KV_file('../.flutter-plugins')

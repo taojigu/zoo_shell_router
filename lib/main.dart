@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'zoo shell Demo Home Page'),
+      home: MyHomePage(title: '847 made'),
     );
   }
 }
