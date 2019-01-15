@@ -14,8 +14,8 @@ Pod::Spec.new do |s|
   s.author           = { 'Flutter Dev Team' => 'flutter-dev@googlegroups.com' }
   s.source           = { :git => 'https://github.com/taojigu/zoo_shell_router', :tag => s.version.to_s }
   s.ios.deployment_target = '7.0'
-  #s.vendored_frameworks = 'ios_framework/App.framework'
-  s.vendored_frameworks = 'ios/Flutter/*.framework'
+  s.vendored_frameworks = 'ios_framework/*.framework'
+  #s.vendored_frameworks = 'ios/Flutter/*.framework'
   s.resource = 'ios_framework/flutter_assets'
   
 end
