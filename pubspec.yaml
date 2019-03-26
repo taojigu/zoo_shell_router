@@ -16,7 +16,9 @@ dependencies:
   flutter:
     sdk: flutter
   tiger_flutter_package:
-    git : https://github.com/taojigu/tiger_flutter_package
+    git: 
+      url: https://github.com/taojigu/tiger_flutter_package
+      ref: plugin
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
