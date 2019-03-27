@@ -17,5 +17,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'ios_framework/*.framework'
   #s.vendored_frameworks = 'ios/Flutter/*.framework'
   s.resource = 'ios_framework/flutter_assets'
+  s.dependency 'Flutter'
+  
   
 end
