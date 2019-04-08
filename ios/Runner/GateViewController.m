@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self addPushButton];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (IBAction)pushFlutterViewController:(id)sender {
@@ -25,6 +27,14 @@
     FlutterViewController *flvc = [[FlutterViewController alloc] init];
     [flvc setInitialRoute:@"lion"];
     [self.navigationController pushViewController:flvc animated:YES];
+}
+
+- (void)addPushButton {
+    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 100, 100, 80)];
+    [button setTitle:@"Push" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(pushFlutterViewController:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
 
 /*

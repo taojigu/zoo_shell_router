@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tiger_flutter_package/tiger_home_page.dart';
-import 'dart:ui';
+import 'package:zoo_shell_router/flutter_boost_app.dart';
 
-void main() => runApp(_widgetForRoute(window.defaultRouteName));
+
+void main() => runApp(FlutterBoostApp());
+
+//void main() => runApp(_widgetForRoute(window.defaultRouteName));
 
 Widget _widgetForRoute(String route) {
  print("window default route name is $route");

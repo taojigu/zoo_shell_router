@@ -1,12 +1,25 @@
 #include "AppDelegate.h"
 #include "GeneratedPluginRegistrant.h"
+#import <flutter_boost/FlutterBoostPlugin.h>
+#import "GateViewController.h"
+#import "DemoRouter.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    GateViewController *gvc = [[GateViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:gvc];
+    self.window.rootViewController = navi;
+    
+    DemoRouter *dr = [[DemoRouter alloc] init];
+    
+    [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:dr
+                                                        onStart:^(FlutterViewController *fvc) {
+                                                            
+                                                        }];
   [GeneratedPluginRegistrant registerWithRegistry:self];
-  // Override point for customization after application launch.
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
