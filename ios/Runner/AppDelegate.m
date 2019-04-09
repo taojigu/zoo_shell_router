@@ -13,8 +13,8 @@
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:gvc];
     self.window.rootViewController = navi;
     
-    DemoRouter *dr = [[DemoRouter alloc] init];
-    
+    DemoRouter *dr = [DemoRouter sharedRouter];
+    dr.navigationController = navi;
     [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:dr
                                                         onStart:^(FlutterViewController *fvc) {
                                                             

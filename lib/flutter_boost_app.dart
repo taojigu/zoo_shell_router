@@ -16,8 +16,12 @@ class _FlutterBoostAppState extends State<FlutterBoostApp> {
   @override
   void initState() { 
     super.initState();
+    PageBuilder tigerBuilder = (pageName,parameter,_) {
+      return TigerHomePage();
+    };
+
     FlutterBoost.singleton.registerPageBuilders({
-      "tiger" : (pageName,parameter,_) => TigerHomePage()
+      "tiger" : tigerBuilder
     });
     FlutterBoost.handleOnStartPage();
   }

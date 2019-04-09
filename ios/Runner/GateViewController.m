@@ -8,6 +8,8 @@
 
 #import "GateViewController.h"
 #import <Flutter/Flutter.h>
+#import <flutter_boost/FLBFlutterViewContainer.h>
+#import "DemoRouter.h"
 
 @interface GateViewController ()
 
@@ -22,6 +24,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+
+- (void)pushFlutterViewContainer {
+    
+    [[DemoRouter sharedRouter] openPage:@"tiger" params:@{} animated:YES completion:^(BOOL f){}];
+    /*
+    FLBFlutterViewContainer *flvc = [[FLBFlutterViewContainer alloc] init];
+    [flvc setName:@"lion" params:@{}];
+    [self.navigationController pushViewController:flvc animated:YES];
+     */
+}
+
 - (IBAction)pushFlutterViewController:(id)sender {
 
     FlutterViewController *flvc = [[FlutterViewController alloc] init];
@@ -33,7 +46,7 @@
     UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 100, 100, 80)];
     [button setTitle:@"Push" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(pushFlutterViewController:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(pushFlutterViewContainer) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
 
