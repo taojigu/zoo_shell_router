@@ -35,7 +35,12 @@ end
 def copyPluginFiles(pluginName,pluginSrcDir)
     puts "copy #{pluginName} from #{pluginSrcDir}"
     allPluginDir = "pluginSource"
-    FileUtils.mkdir_p(allPluginDir) unless File.exist?(allPluginDir)
+    if File.exist?(allPluginDir)
+      FileUtils.rm_rf(allPluginDir)
+    end
+    FileUtils.mkdir_p(allPluginDir)
+    puts "Create directory #{allPluginDir}"
+
     pluginDir = File.join(allPluginDir,pluginName);
     if File.exist?(pluginDir)
         puts "Delete #{pluginName} Dir"
